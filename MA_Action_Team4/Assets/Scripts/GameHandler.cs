@@ -26,6 +26,10 @@ public class GameHandler : MonoBehaviour {
       public static bool stairCaseUnlocked = false;
       //this is a flag check. Add to other scripts: GameHandler.stairCaseUnlocked = true;
 
+      public static bool gotitem1 = false;
+      public static bool gotitem2 = false;
+      public static bool gotitem3 = false;
+      
       private string sceneName;
 
       void Awake (){
@@ -74,7 +78,7 @@ public class GameHandler : MonoBehaviour {
         public void SetLevel (float sliderValue){
                 mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
                 volumeLevel = sliderValue;
-        } 
+        }
 
       public void playerGetTokens(int newTokens){
             gotTokens += newTokens;
