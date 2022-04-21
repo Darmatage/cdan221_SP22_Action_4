@@ -6,10 +6,10 @@ public class PickUp : MonoBehaviour{
 
       public GameHandler gameHandler;
       //public playerVFX playerPowerupVFX;
-      public bool isHealthPickUp = true;
+      public bool isHealthPickUp = false;
       public bool isSpeedBoostPickUp = false;
 
-      public int healthBoost = 50;
+      public int healthBoost = 10;
       public float speedBoost = 2f;
       public float speedTime = 2f;
 
@@ -21,7 +21,7 @@ public class PickUp : MonoBehaviour{
       public void OnTriggerEnter2D (Collider2D other){
             if (other.gameObject.tag == "Player"){
                   GetComponent<Collider2D>().enabled = false;
-                  GetComponent<AudioSource>().Play();
+                  //GetComponent<AudioSource>().Play();
                   StartCoroutine(DestroyThis());
 
                   if (isHealthPickUp == true) {
@@ -29,13 +29,14 @@ public class PickUp : MonoBehaviour{
                         //playerPowerupVFX.powerup();
                   }
 
-                  //if (isSpeedBoostPickUp == true) {
-                      //  other.gameObject.GetComponent<PlayerMovement>().speedBoost(speedBoost, speedTime);
+              //    if (isSpeedBoostPickUp == true) {
+                  //      other.gameObject.GetComponent<PlayerMovement>().speedBoost(speedBoost, speedTime);
                         //playerPowerupVFX.powerup();
                   }
             }
-            IEnumerator DestroyThis(){
+          IEnumerator DestroyThis(){
                   yield return new WaitForSeconds(0.3f);
                   Destroy(gameObject);
-            }
-      }
+          }
+
+    }
