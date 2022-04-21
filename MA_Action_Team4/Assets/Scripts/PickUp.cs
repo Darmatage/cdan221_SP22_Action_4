@@ -29,13 +29,14 @@ public class PickUp : MonoBehaviour{
                         //playerPowerupVFX.powerup();
                   }
 
-                  //if (isSpeedBoostPickUp == true) {
-                      //  other.gameObject.GetComponent<PlayerMovement>().speedBoost(speedBoost, speedTime);
+              //    if (isSpeedBoostPickUp == true) {
+                  //      other.gameObject.GetComponent<PlayerMovement>().speedBoost(speedBoost, speedTime);
                         //playerPowerupVFX.powerup();
                   }
             }
-            IEnumerator DestroyThis(){
+          IEnumerator DestroyThis(){
                   yield return new WaitForSeconds(0.3f);
                   Destroy(gameObject);
-            }
-      }
+          }
+
+    }
