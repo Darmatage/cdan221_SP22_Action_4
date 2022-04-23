@@ -8,15 +8,30 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 186ec28f9225a4b0cbd3bb0a67ac5c57
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Lose.unity
     guid: 81ca7f473ff624f1eb7344f4627003a4
   - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: 64cc59692c93b42b686ee80cf050df39
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 78cbe38cfb71948ebb88c334b39162a5
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 1c3f50e80e11c41d2a571267781b76c6
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: efcfc6525c8b2401e92404cf7240b51a
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: ba4e1b5b5a1114291b5f8640c80c1025
+  - enabled: 1
+    path: Assets/Scenes/ShopMenu.unity
+    guid: 6a812f543922449edaae98b1386c7eff
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
