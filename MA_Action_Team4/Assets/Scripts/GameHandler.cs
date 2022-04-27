@@ -13,10 +13,13 @@ public class GameHandler : MonoBehaviour {
       public static float volumeLevel = 1.0f;
       private Slider sliderVolumeCtrl;
 
+      public GameObject ButtonOpenShop;
+      public bool ableToShop = true;
+
       private GameObject player;
-      public static int playerHealth = 100;
-      public int StartPlayerHealth = 100;
-      public GameObject healthText;
+      public static int playerStamina = 100;
+      public int StartPlayerStamina = 100;
+      public GameObject staminaText;
 
       public static int gotTokens = 0;
       public GameObject tokensText;
@@ -29,7 +32,7 @@ public class GameHandler : MonoBehaviour {
       public static bool gotitem1 = false;
       public static bool gotitem2 = false;
       public static bool gotitem3 = false;
-      
+
       private string sceneName;
 
       void Awake (){
@@ -47,9 +50,10 @@ public class GameHandler : MonoBehaviour {
             player = GameObject.FindWithTag("Player");
             sceneName = SceneManager.GetActiveScene().name;
             //if (sceneName=="MainMenu"){ //uncomment these two lines when the MainMenu exists
-                  playerHealth = StartPlayerHealth;
+                  playerStamina = StartPlayerStamina;
             //}
             updateStatsDisplay();
+            ButtonOpenShop.SetActive(false);
       }
 
       void Update (){
@@ -61,6 +65,14 @@ public class GameHandler : MonoBehaviour {
                                 Pause();
                         }
                 }
+
+                if(ableToShop == true){
+                  ButtonOpenShop.SetActive(true);
+                }
+                else{
+                  ButtonOpenShop.SetActive(false);
+                }
+
         }
 
         void Pause(){
@@ -87,26 +99,26 @@ public class GameHandler : MonoBehaviour {
 
       public void playerGetHit(int damage){
            if (isDefending == false){
-                  playerHealth -= damage;
-                  if (playerHealth >=0){
+                  playerStamina -= damage;
+                  if (playerStamina >=0){
                         updateStatsDisplay();
                   }
         //          player.GetComponent<PlayerHurt>().playerHit();
             }
 
-           if (playerHealth >= StartPlayerHealth){
-                  playerHealth = StartPlayerHealth;
+           if (playerStamina >= StartPlayerStamina){
+                  playerStamina = StartPlayerStamina;
             }
 
-           if (playerHealth <= 0){
-                  playerHealth = 0;
+           if (playerStamina <= 0){
+                  playerStamina = 0;
                   playerDies();
             }
       }
 
       public void updateStatsDisplay(){
-            Text healthTextTemp = healthText.GetComponent<Text>();
-            healthTextTemp.text = "FOOD: " + playerHealth;
+            Text staminaTextTemp = staminaText.GetComponent<Text>();
+            staminaTextTemp.text = "HUNGER: " + playerStamina;
 
             Text tokensTextTemp = tokensText.GetComponent<Text>();
             tokensTextTemp.text = "WATER: " + gotTokens;
@@ -121,7 +133,7 @@ public class GameHandler : MonoBehaviour {
         //    player.GetComponent<PlayerMove>().isAlive = false;
         //    player.GetComponent<PlayerJump>().isAlive = false;
             yield return new WaitForSeconds(1.0f);
-            SceneManager.LoadScene("EndLose");
+            SceneManager.LoadScene("Lose");
       }
 
       public void StartGame() {
@@ -131,7 +143,7 @@ public class GameHandler : MonoBehaviour {
       public void RestartGame() {
             Time.timeScale = 1f;
             SceneManager.LoadScene("MainMenu");
-            playerHealth = StartPlayerHealth;
+            playerStamina = StartPlayerStamina;
       }
 
       public void QuitGame() {
