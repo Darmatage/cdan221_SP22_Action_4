@@ -156,4 +156,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextLevel: Level1
   msgPressE: {fileID: 6948230665066630348}
-  canPressE: 1
+  canPressE: 0
