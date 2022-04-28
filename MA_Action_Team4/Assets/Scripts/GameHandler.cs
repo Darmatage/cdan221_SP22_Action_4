@@ -49,9 +49,10 @@ public class GameHandler : MonoBehaviour {
             GameisPaused = false;
             player = GameObject.FindWithTag("Player");
             sceneName = SceneManager.GetActiveScene().name;
-            //if (sceneName=="MainMenu"){ //uncomment these two lines when the MainMenu exists
+
+            if (sceneName=="MainMenu"){ //uncomment these two lines when the MainMenu exists
                   playerStamina = StartPlayerStamina;
-            //}
+            }
             updateStatsDisplay();
             ButtonOpenShop.SetActive(false);
       }
