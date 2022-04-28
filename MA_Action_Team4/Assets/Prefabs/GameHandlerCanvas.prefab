@@ -1819,6 +1819,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9186899569483598690}
     m_Modifications:
+    - target: {fileID: 1835762048260591318, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
+      propertyPath: m_Text
+      value: Sugar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533098948437444472, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
+      propertyPath: m_Text
+      value: Lemon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895148105231852931, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
+      propertyPath: m_Text
+      value: Dandy
+      objectReference: {fileID: 0}
     - target: {fileID: 5374028630848868370, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1905,7 +1917,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5374028630848868371, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
       propertyPath: m_Name
-      value: Inv_Item
+      value: Inv_Item1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374028631664089111, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
+      propertyPath: m_Text
+      value: Apple
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430190939528748230, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
+      propertyPath: m_Text
+      value: Salt Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914045327451479405, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
+      propertyPath: m_Text
+      value: Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950551975867620817, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
+      propertyPath: m_Text
+      value: Silk Cloth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603360532564320230, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
+      propertyPath: m_Text
+      value: Acorn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910865731906407237, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
+      propertyPath: m_Text
+      value: Shell
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393602569026526040, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
+      propertyPath: m_Text
+      value: Daisy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816447435641817415, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
+      propertyPath: m_Text
+      value: Carrot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
