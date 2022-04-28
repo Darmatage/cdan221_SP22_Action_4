@@ -22504,7 +22504,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 987560189911591681, guid: 7b49cfa4e349d4f4ebc96f5ab57d32bb, type: 3}
       propertyPath: m_SortingOrder
+<<<<<<< Updated upstream
       value: 100
+=======
+      value: 30
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 987560189911591686, guid: 7b49cfa4e349d4f4ebc96f5ab57d32bb, type: 3}
       propertyPath: m_RootOrder
