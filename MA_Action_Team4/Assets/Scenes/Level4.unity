@@ -32084,7 +32084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextLevel: Level1
   msgPressE: {fileID: 902665585}
-  canPressE: 1
+  canPressE: 0
 --- !u!1 &1678374615
 GameObject:
   m_ObjectHideFlags: 0
