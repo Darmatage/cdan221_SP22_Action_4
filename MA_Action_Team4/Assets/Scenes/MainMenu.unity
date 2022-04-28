@@ -361,6 +361,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameHandler
       objectReference: {fileID: 0}
+    - target: {fileID: 4040746689753034138, guid: 63039762bfaea4466bcf86f9f9742ff7, type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 43a0a0780494c4c5789a58a20765273e, type: 2}
+    - target: {fileID: 4040746689753034138, guid: 63039762bfaea4466bcf86f9f9742ff7, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 892568793}
     - target: {fileID: 4040746689753034139, guid: 63039762bfaea4466bcf86f9f9742ff7, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -497,6 +505,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853053903}
   m_CullTransparentMesh: 1
+--- !u!1 &892568793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 973245712782739814, guid: e73bbdbbbbbeb485caf8d319bc0b860e, type: 3}
+  m_PrefabInstance: {fileID: 1793822004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1231868470
 GameObject:
   m_ObjectHideFlags: 0
