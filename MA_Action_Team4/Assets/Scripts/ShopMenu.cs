@@ -22,6 +22,7 @@ public class ShopMenu : MonoBehaviour{
 
       void Start (){
             shopMenuUI.SetActive(false);
+			//buttonOpenShop.SetActive(false);
             gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
       }
 
@@ -53,6 +54,11 @@ public class ShopMenu : MonoBehaviour{
            ShopisOpen = false;
            Time.timeScale = 1f;
       }
+
+	public void ShowShopButton(){
+		buttonOpenShop.SetActive(true);
+	}
+
 
       public void Button_BuyItem1(){
             gameHandler.playerGetTokens((item1Cost * -1));

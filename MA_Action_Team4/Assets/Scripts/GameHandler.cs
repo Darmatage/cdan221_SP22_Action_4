@@ -117,6 +117,16 @@ public class GameHandler : MonoBehaviour {
             }
       }
 
+	public void eatFood(int calories){
+		playerStamina += calories;
+		if (playerStamina >= StartPlayerStamina){
+                  playerStamina = StartPlayerStamina;
+        }
+		updateStatsDisplay();
+		//make a cool effect to show improvement!
+	}
+
+
       public void updateStatsDisplay(){
             Text staminaTextTemp = staminaText.GetComponent<Text>();
             staminaTextTemp.text = "HUNGER: " + playerStamina;
