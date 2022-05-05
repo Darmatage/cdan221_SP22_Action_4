@@ -64,7 +64,7 @@ public class GameInventory : MonoBehaviour{
     public GameObject cooked4text;
     public GameObject cooked5text;
 
-	public static int item1num = 5;
+	public static int item1num;
 	public static int item2num;	
 	public static int item3num;	
 	public static int item4num;	
