@@ -21,13 +21,13 @@ public class GameInventory : MonoBehaviour{
     public static bool item9bool = false;
     public static bool item10bool = false;
     public static bool item11bool = true;
-	
+
 	public static bool cooked1bool = false;
     public static bool cooked2bool = false;
     public static bool cooked3bool = false;
     public static bool cooked4bool = false;
     public static bool cooked5bool = false;
-	
+
     public GameObject item1image;
     public GameObject item2image;
     public GameObject item3image;
@@ -64,24 +64,24 @@ public class GameInventory : MonoBehaviour{
     public GameObject cooked4text;
     public GameObject cooked5text;
 
-	public static int item1num;
-	public static int item2num;	
-	public static int item3num;	
-	public static int item4num;	
-	public static int item5num;	
-	public static int item6num;	
+	public static int item1num = 2;
+	public static int item2num;
+	public static int item3num;
+	public static int item4num;
+	public static int item5num;
+	public static int item6num;
 	public static int item7num;
-	public static int item8num;	
-	public static int item9num;	
-	public static int item10num;	
-	public static int item11num = 5;	
-	
+	public static int item8num;
+	public static int item9num;
+	public static int item10num;
+	public static int item11num = 3;
+
 	public static int cooked1num = 0;
-	public static int cooked2num = 0;	
-	public static int cooked3num = 0;	
-	public static int cooked4num = 0;	
-	public static int cooked5num = 0;	
-	
+	public static int cooked2num = 0;
+	public static int cooked3num = 0;
+	public static int cooked4num = 0;
+	public static int cooked5num = 0;
+
 	//Cookbook variables:
 	public GameObject cookButton1;
     //public GameObject cookButton2;
@@ -89,19 +89,19 @@ public class GameInventory : MonoBehaviour{
     //public GameObject cookButton4;
     //public GameObject cookButton5;
     //public GameObject cookButton6;
-	
+
 	public GameObject ingredient1aText;
     public GameObject ingredient1bText;
-	// public GameObject ingredient2aText;
-    // public GameObject ingredient2bText;
+	 //public GameObject ingredient2aText;
+     //public GameObject ingredient2bText;
 	// public GameObject ingredient3aText;
     // public GameObject ingredient3bText;
 	// public GameObject ingredient4aText;
     // public GameObject ingredient4bText;
 	// public GameObject ingredient5aText;
-    // public GameObject ingredient5bText;	
+    // public GameObject ingredient5bText;
 	// public GameObject ingredient6aText;
-    // public GameObject ingredient6bText;	
+    // public GameObject ingredient6bText;
 
     void Start(){
         InventoryMenu.SetActive(false);
@@ -121,13 +121,13 @@ public class GameInventory : MonoBehaviour{
         if (item9bool == true) { item9image.SetActive(true); } else { item9image.SetActive(false); }
         if (item10bool == true) { item10image.SetActive(true); } else { item10image.SetActive(false); }
         if (item11bool == true) { item11image.SetActive(true); } else { item11image.SetActive(false); }
-        
+
 		if (cooked1bool == true) { cooked1image.SetActive(true); } else { cooked1image.SetActive(false); }
         if (cooked2bool == true) { cooked2image.SetActive(true); } else { cooked2image.SetActive(false); }
         if (cooked3bool == true) { cooked3image.SetActive(true); } else { cooked3image.SetActive(false); }
         if (cooked4bool == true) { cooked4image.SetActive(true); } else { cooked4image.SetActive(false); }
         if (cooked5bool == true) { cooked5image.SetActive(true); } else { cooked5image.SetActive(false); }
-		
+
         Text itemText1B = item1text.GetComponent<Text>(); itemText1B.text = ("" + item1num);
 		Text itemText2B = item2text.GetComponent<Text>(); itemText2B.text = ("" + item2num);
 		Text itemText3B = item3text.GetComponent<Text>(); itemText3B.text = ("" + item3num);
@@ -139,21 +139,21 @@ public class GameInventory : MonoBehaviour{
 		Text itemText9B = item9text.GetComponent<Text>(); itemText9B.text = ("" + item9num);
 		Text itemText10B = item10text.GetComponent<Text>(); itemText10B.text = ("" + item10num);
 		Text itemText11B = item11text.GetComponent<Text>(); itemText11B.text = ("" + item11num);
-		
+
 		Text cookedText1B = cooked1text.GetComponent<Text>(); cookedText1B.text = ("" + cooked1num);
 		Text cookedText2B = cooked2text.GetComponent<Text>(); cookedText2B.text = ("" + cooked2num);
 		Text cookedText3B = cooked3text.GetComponent<Text>(); cookedText3B.text = ("" + cooked3num);
 		Text cookedText4B = cooked4text.GetComponent<Text>(); cookedText4B.text = ("" + cooked4num);
 		Text cookedText5B = cooked5text.GetComponent<Text>(); cookedText5B.text = ("" + cooked5num);
-		
+
 		//Cookbook:
 		if ((item1num >= 2) && (item11num >=1)){cookButton1.SetActive(true);} else {cookButton1.SetActive(false);} // applepie
-		//if ((item1num >= 2) && (item11num >=1)){cookButton2.SetActive(true);} else {cookButton2.SetActive(false);}
+		//if ((item2num >= 4) && (item11num >=1)){cookButton2.SetActive(true);} else {cookButton2.SetActive(false);}
 		//if ((item1num >= 2) && (item11num >=1)){cookButton3.SetActive(true);} else {cookButton3.SetActive(false);}
 		//if ((item1num >= 2) && (item11num >=1)){cookButton4.SetActive(true);} else {cookButton4.SetActive(false);}
 		//if ((item1num >= 2) && (item11num >=1)){cookButton5.SetActive(true);} else {cookButton5.SetActive(false);}
 		//if ((item1num >= 2) && (item11num >=1)){cookButton6.SetActive(true);} else {cookButton6.SetActive(false);}
-    
+
 		Text ingredient1aTextB = ingredient1aText.GetComponent<Text>(); ingredient1aTextB.text = ("" + item1num); //apples
 		Text ingredient1bTextB = ingredient1bText.GetComponent<Text>(); ingredient1bTextB.text = ("" + item11num); //sugar
 		//Text ingredient2aTextB = ingredient2aText.GetComponent<Text>(); ingredient2aTextB.text = ("" + item?num);
@@ -166,7 +166,7 @@ public class GameInventory : MonoBehaviour{
 		//Text ingredient5bTextB = ingredient2bText.GetComponent<Text>(); ingredient2bTextB.text = ("" + item?num);
 		//Text ingredient6aTextB = ingredient2aText.GetComponent<Text>(); ingredient2aTextB.text = ("" + item?num);
 		//Text ingredient6bTextB = ingredient2bText.GetComponent<Text>(); ingredient2bTextB.text = ("" + item?num);
-		
+
 	}
 
     public void InventoryAdd(string item){
@@ -183,14 +183,14 @@ public class GameInventory : MonoBehaviour{
 	    else if (foundItemName == "item10") { item10bool = true; item10num++; }
 	    else if (foundItemName == "item11") { item11bool = true; item11num++; }
 
-	    else if (foundItemName == "cooked1") { cooked1bool = true; cooked1num++; }		
+	    else if (foundItemName == "cooked1") { cooked1bool = true; cooked1num++; }
 		else if (foundItemName == "cooked2") { cooked2bool = true; cooked2num++; }
         else if (foundItemName == "cooked3") { cooked3bool = true; cooked3num++; }
         else if (foundItemName == "cooked4") { cooked4bool = true; cooked4num++; }
         else if (foundItemName == "cooked5") { cooked5bool = true; cooked5num++; }
 
         InventoryDisplay();
-		
+
 		if (!InvIsOpen){
 			OpenCloseInventory();
 		}
@@ -210,7 +210,7 @@ public class GameInventory : MonoBehaviour{
         else if (itemRemove == "item10") { item10num--;if (item10num<=0){item10bool = false;} }
         else if (itemRemove == "item11") { item11num--;if (item11num<=0){item11bool = false;} }
 
-        else if (itemRemove == "cooked1") { cooked1num--;if (cooked1num<=0){cooked1bool = false;} }        
+        else if (itemRemove == "cooked1") { cooked1num--;if (cooked1num<=0){cooked1bool = false;} }
 		else if (itemRemove == "cooked2") { cooked2num--;if (cooked2num<=0){cooked2bool = false;} }
         else if (itemRemove == "cooked3") { cooked3num--;if (cooked3num<=0){cooked3bool = false;} }
         else if (itemRemove == "cooked4") { cooked4num--;if (cooked4num<=0){cooked4bool = false;} }
@@ -222,7 +222,7 @@ public class GameInventory : MonoBehaviour{
 
 	//Open and Close the Inventory
 	public void OpenCloseInventory(){
-		if (InvIsOpen){InventoryMenu.SetActive(false);} 
+		if (InvIsOpen){InventoryMenu.SetActive(false);}
 		else {InventoryMenu.SetActive(true);}
 		InvIsOpen = !InvIsOpen;
 	}
