@@ -64,17 +64,17 @@ public class GameInventory : MonoBehaviour{
     public GameObject cooked4text;
     public GameObject cooked5text;
 
-	public static int item1num = 5;
-	public static int item2num = 5;
-	public static int item3num = 5;
-	public static int item4num = 5;
-	public static int item5num = 5;
-	public static int item6num = 5;
-	public static int item7num = 5;
-	public static int item8num = 5;
-	public static int item9num = 5;
-	public static int item10num = 5;
-	public static int item11num = 5;
+	public static int item1num = 0;
+	public static int item2num = 0;
+	public static int item3num = 0;
+	public static int item4num = 0;
+	public static int item5num = 0;
+	public static int item6num = 0;
+	public static int item7num = 0;
+	public static int item8num = 0;
+	public static int item9num = 0;
+	public static int item10num = 0;
+	public static int item11num = 0;
 
 	public static int cooked1num = 0;
 	public static int cooked2num = 0;
