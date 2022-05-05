@@ -2710,7 +2710,7 @@ PrefabInstance:
     - target: {fileID: 516222514342666090, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: cc0bfa59321214caa9292360ba5eb69c, type: 3}
+      objectReference: {fileID: 21300000, guid: 74a91b7a863fb457180013bf31a9bd16, type: 3}
     - target: {fileID: 1835762048260591318, guid: c148ff49773684c5f8a6c5e76d27b044, type: 3}
       propertyPath: m_Text
       value: Sugar
