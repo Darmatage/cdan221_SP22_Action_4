@@ -1780,7 +1780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6232378583144478838
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3407,6 +3407,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AddCooked3
       objectReference: {fileID: 0}
+    - target: {fileID: 1070952410963645003, guid: 42f8e4cb49aaa8d47b6926d4c4564d62, type: 3}
+      propertyPath: m_Text
+      value: 'Trail
+
+        Mix'
+      objectReference: {fileID: 0}
     - target: {fileID: 2375674079593307626, guid: 42f8e4cb49aaa8d47b6926d4c4564d62, type: 3}
       propertyPath: m_Name
       value: RECIPE3_TrailMix
@@ -3856,6 +3862,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AddCooked4
       objectReference: {fileID: 0}
+    - target: {fileID: 1070952410963645003, guid: 42f8e4cb49aaa8d47b6926d4c4564d62, type: 3}
+      propertyPath: m_Text
+      value: "Mush \nStew"
+      objectReference: {fileID: 0}
     - target: {fileID: 2375674079593307626, guid: 42f8e4cb49aaa8d47b6926d4c4564d62, type: 3}
       propertyPath: m_Name
       value: RECIPE4_MushroomStew
@@ -4004,6 +4014,12 @@ PrefabInstance:
     - target: {fileID: 230219189244676105, guid: 42f8e4cb49aaa8d47b6926d4c4564d62, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AddCooked5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070952410963645003, guid: 42f8e4cb49aaa8d47b6926d4c4564d62, type: 3}
+      propertyPath: m_Text
+      value: 'Steak
+
+        Dinner'
       objectReference: {fileID: 0}
     - target: {fileID: 2375674079593307626, guid: 42f8e4cb49aaa8d47b6926d4c4564d62, type: 3}
       propertyPath: m_Name
@@ -5980,6 +5996,12 @@ PrefabInstance:
     - target: {fileID: 230219189244676105, guid: 42f8e4cb49aaa8d47b6926d4c4564d62, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AddCooked2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070952410963645003, guid: 42f8e4cb49aaa8d47b6926d4c4564d62, type: 3}
+      propertyPath: m_Text
+      value: 'Lemon
+
+        Square'
       objectReference: {fileID: 0}
     - target: {fileID: 2375674079593307626, guid: 42f8e4cb49aaa8d47b6926d4c4564d62, type: 3}
       propertyPath: m_Name
