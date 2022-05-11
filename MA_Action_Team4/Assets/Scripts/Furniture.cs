@@ -8,6 +8,11 @@ public class Furniture : MonoBehaviour {
 	public static bool hasDuck = false;
 	public static bool hasChair1 = false;
 	public static bool hasChair2 = false;
+	public static bool hasBed = false;
+	public static bool hasTable = false;
+	public static bool hasSink = false;
+	public static bool hasCouch = false;
+	public static bool hasRug = false;
 
 
 
