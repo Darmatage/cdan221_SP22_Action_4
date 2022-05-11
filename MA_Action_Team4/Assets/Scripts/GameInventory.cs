@@ -64,23 +64,24 @@ public class GameInventory : MonoBehaviour{
     public GameObject cooked4text;
     public GameObject cooked5text;
 
-	public static int item1num = 0;
-	public static int item2num = 0;
-	public static int item3num = 0;
-	public static int item4num = 0;
-	public static int item5num = 0;
-	public static int item6num = 0;
-	public static int item7num = 0;
-	public static int item8num = 0;
-	public static int item9num = 0;
-	public static int item10num = 0;
-	public static int item11num = 0;
+	public static int item1num = 0; //apples
+	public static int item2num = 0; //acorn
+	public static int item3num = 0; //carrot
+	public static int item4num = 0; //mystery meat
+	public static int item5num = 0; //daisy
+	public static int item6num = 0; //dandy
+	public static int item7num = 0; //lemon
+	public static int item8num = 0; //mushroom
+	public static int item9num = 0; //saltrock
+	public static int item10num = 0; //shell
+	public static int item11num = 0; //sugar
 
-	public static int cooked1num = 0;
-	public static int cooked2num = 0;
-	public static int cooked3num = 0;
-	public static int cooked4num = 0;
-	public static int cooked5num = 0;
+	public static int cooked1num = 0; //applepie
+	public static int cooked2num = 0; //lemonsquare
+	public static int cooked3num = 0; //forest feast
+	public static int cooked4num = 0; //carrot cake
+	public static int cooked5num = 0; //steak dinner
+
 
 	//Cookbook variables:
 	public GameObject cookButton1;
@@ -196,25 +197,25 @@ public class GameInventory : MonoBehaviour{
 		}
     }
 
-    public void InventoryRemove(string item){
+    public void InventoryRemove(string item, int num){
         string itemRemove = item;
-        if (itemRemove == "item1") { item1num--;if (item1num<=0){item1bool = false;} }
-        else if (itemRemove == "item2") { item2num--;if (item2num<=0){item2bool = false;} }
-        else if (itemRemove == "item3") { item3num--;if (item3num<=0){item3bool = false;} }
-        else if (itemRemove == "item4") { item4num--;if (item4num<=0){item4bool = false;} }
-        else if (itemRemove == "item5") { item5num--;if (item5num<=0){item5bool = false;} }
-        else if (itemRemove == "item6") { item6num--;if (item6num<=0){item6bool = false;} }
-        else if (itemRemove == "item7") { item7num--;if (item7num<=0){item7bool = false;} }
-        else if (itemRemove == "item8") { item8num--;if (item8num<=0){item8bool = false;} }
-        else if (itemRemove == "item9") { item9num--;if (item9num<=0){item9bool = false;} }
-        else if (itemRemove == "item10") { item10num--;if (item10num<=0){item10bool = false;} }
-        else if (itemRemove == "item11") { item11num--;if (item11num<=0){item11bool = false;} }
+        if (itemRemove == "item1") { item1num -= num;if (item1num<=0){item1bool = false;} }
+        else if (itemRemove == "item2") { item2num -= num;if (item2num<=0){item2bool = false;} }
+        else if (itemRemove == "item3") { item3num -= num;if (item3num<=0){item3bool = false;} }
+        else if (itemRemove == "item4") { item4num -= num;if (item4num<=0){item4bool = false;} }
+        else if (itemRemove == "item5") { item5num -= num;if (item5num<=0){item5bool = false;} }
+        else if (itemRemove == "item6") { item6num -= num;if (item6num<=0){item6bool = false;} }
+        else if (itemRemove == "item7") { item7num -= num;if (item7num<=0){item7bool = false;} }
+        else if (itemRemove == "item8") { item8num -= num;if (item8num<=0){item8bool = false;} }
+        else if (itemRemove == "item9") { item9num -= num;if (item9num<=0){item9bool = false;} }
+        else if (itemRemove == "item10") { item10num -= num;if (item10num<=0){item10bool = false;} }
+        else if (itemRemove == "item11") { item11num -= num;if (item11num<=0){item11bool = false;} }
 
-        else if (itemRemove == "cooked1") { cooked1num--;if (cooked1num<=0){cooked1bool = false;} }
-		else if (itemRemove == "cooked2") { cooked2num--;if (cooked2num<=0){cooked2bool = false;} }
-        else if (itemRemove == "cooked3") { cooked3num--;if (cooked3num<=0){cooked3bool = false;} }
-        else if (itemRemove == "cooked4") { cooked4num--;if (cooked4num<=0){cooked4bool = false;} }
-        else if (itemRemove == "cooked5") { cooked5num--;if (cooked5num<=0){cooked5bool = false;} }
+        else if (itemRemove == "cooked1") { cooked1num -= num;if (cooked1num<=0){cooked1bool = false;} }
+		else if (itemRemove == "cooked2") { cooked2num -= num;if (cooked2num<=0){cooked2bool = false;} }
+        else if (itemRemove == "cooked3") { cooked3num -= num;if (cooked3num<=0){cooked3bool = false;} }
+        else if (itemRemove == "cooked4") { cooked4num -= num;if (cooked4num<=0){cooked4bool = false;} }
+        else if (itemRemove == "cooked5") { cooked5num -= num;if (cooked5num<=0){cooked5bool = false;} }
 
 		InventoryDisplay();
     }
@@ -235,23 +236,23 @@ public class GameInventory : MonoBehaviour{
 	//Cooked food add button functions
 	public void AddCooked1(){
 		InventoryAdd("cooked1");
-		InventoryRemove("item1"); InventoryRemove("item1"); InventoryRemove("item11");
+		InventoryRemove("item1", 2); InventoryRemove("item11", 1);
 		}
 	public void AddCooked2(){
 		InventoryAdd("cooked2");
-		InventoryRemove("item7"); InventoryRemove("item7"); InventoryRemove("item11");
+		InventoryRemove("item7", 2); InventoryRemove("item11", 1);
 		}
 	public void AddCooked3(){
 		InventoryAdd("cooked3");
-		InventoryRemove("item2"); InventoryRemove("item2"); InventoryRemove("item2"); InventoryRemove("item2"); InventoryRemove("item2"); InventoryRemove("item9");
+		InventoryRemove("item2", 5); InventoryRemove("item9", 1);
 		}
 	public void AddCooked4(){
 		InventoryAdd("cooked4");
-		InventoryRemove("item8"); InventoryRemove("item8"); InventoryRemove("item3"); InventoryRemove("item3");
+		InventoryRemove("item8", 2); InventoryRemove("item3", 2); 
 	}
 	public void AddCooked5(){
 		InventoryAdd("cooked5");
-		InventoryRemove("item4"); InventoryRemove("item9"); InventoryRemove("item9"); InventoryRemove("item9"); InventoryRemove("item9"); InventoryRemove("item9");
+		InventoryRemove("item4", 1); InventoryRemove("item9", 5);
 	}
 	public void AddCooked6(){
 		//GameHandler win state
@@ -260,29 +261,29 @@ public class GameInventory : MonoBehaviour{
 
 	//Cooked food eating button functions
 	public void EatCooked1(){
-		InventoryRemove("cooked1");
+		InventoryRemove("cooked1", 1);
 		GetComponent<GameHandler>().eatFood(20);
 	}
 
 	public void EatCooked2(){
-		InventoryRemove("cooked2");
+		InventoryRemove("cooked2", 1);
 		GetComponent<GameHandler>().eatFood(20);
 	}
 
 	public void EatCooked3(){
-		InventoryRemove("cooked3");
+		InventoryRemove("cooked3", 1);
 		GetComponent<GameHandler>().eatFood(35);
 	}
 
 
 	public void EatCooked4(){
-		InventoryRemove("cooked4");
+		InventoryRemove("cooked4", 1);
 		GetComponent<GameHandler>().eatFood(45);
 	}
 
 
 	public void EatCooked5(){
-		InventoryRemove("cooked5");
+		InventoryRemove("cooked5", 1);
 		GetComponent<GameHandler>().eatFood(55);
 	}
 

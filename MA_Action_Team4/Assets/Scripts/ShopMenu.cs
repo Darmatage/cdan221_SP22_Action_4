@@ -6,38 +6,73 @@ using UnityEngine.UI;
 
 public class ShopMenu : MonoBehaviour{
 
-      public GameHandler gameHandler;
-      public static bool ShopisOpen = false;
-      public GameObject shopMenuUI;
-      public GameObject buttonOpenShop;
+	public Furniture furnitureControl;
+	public GameHandler gameHandler;
+	public static bool ShopisOpen = false;
+	public GameObject shopMenuUI;
+	public GameObject buttonOpenShop;
 
-      public GameObject item1BuyButton;
-      public GameObject item2BuyButton;
-      public GameObject item3BuyButton;
+	public GameObject item1BuyButton;
+	public GameObject item2BuyButton;
+	public GameObject item3BuyButton;
+	public GameObject item4BuyButton;
+	public GameObject item5BuyButton;
+	public GameObject item6BuyButton;
+	public GameObject item7BuyButton;
+	public GameObject item8BuyButton;	
+	  
+	public int furniture1Cost = 2; //bed = 2 apples
+	public int furniture2Cost = 2; //table = 2 acorns
+	public int furniture3Cost = 1; //chair1 = 1 carrot
+	public int furniture4Cost = 1; //chair2 = 1 carrot
+	public int furniture5Cost = 3; //sink = 3 mushroom
+	public int furniture6Cost = 1; //couch = 1 daisy
+	public int furniture7Cost = 1; //rug = 1 dandy
+	public int furniture8Cost = 5; //duck = 5 sugar
 
-      public int item1Cost = 3;
-      public int item2Cost = 4;
-      public int item3Cost = 5;
-      //public AudioSource KaChingSFX;
+	  
+	//public AudioSource KaChingSFX;
 
-      void Start (){
-            shopMenuUI.SetActive(false);
-			//buttonOpenShop.SetActive(false);
-            gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
-      }
+	void Start (){
+		shopMenuUI.SetActive(false);
+		//buttonOpenShop.SetActive(false);
+		gameHandler = GetComponent<GameHandler>();
+		furnitureControl = GetComponent<Furniture>();
+	}
 
-      void Update (){
-            if ((GameHandler.gotTokens >= item1Cost) && (GameHandler.gotitem1 == false)) {
-                        item1BuyButton.SetActive(true);}
-            else { item1BuyButton.SetActive(false);}
+	void Update (){
+		if ((GameInventory.item1num >= item1Cost) && (Furniture.hasBed == false)) {
+			item1BuyButton.SetActive(true);}
+		else { item1BuyButton.SetActive(false);}
 
-            if ((GameHandler.gotTokens >= item2Cost) && (GameHandler.gotitem2 == false)) {
-                        item2BuyButton.SetActive(true);}
-            else { item2BuyButton.SetActive(false);}
+		if ((GameInventory.item1num >= item2Cost) && (Furniture.hasTable == false)) {
+			item2BuyButton.SetActive(true);}
+		else { item2BuyButton.SetActive(false);}
 
-            if ((GameHandler.gotTokens >= item3Cost) && (GameHandler.gotitem3 == false)) {
-                        item3BuyButton.SetActive(true);}
-            else { item3BuyButton.SetActive(false);}
+		if ((GameInventory.item1num >= item3Cost) && (Furniture.hasChair1 == false)) {
+			item3BuyButton.SetActive(true);}
+		else { item3BuyButton.SetActive(false);}
+		
+		if ((GameInventory.item1num >= item4Cost) && (Furniture.hasChair2 == false)) {
+			item4BuyButton.SetActive(true);}
+		else { item4BuyButton.SetActive(false);}
+
+		if ((GameInventory.item1num >= item5Cost) && (Furniture.hasSink == false)) {
+			item5BuyButton.SetActive(true);}
+		else { item5BuyButton.SetActive(false);}
+
+		if ((GameInventory.item1num >= item6Cost) && (Furniture.hasCouch == false)) {
+			item6BuyButton.SetActive(true);}
+		else { item6BuyButton.SetActive(false);}
+
+		if ((GameInventory.item1num >= item7Cost) && (Furniture.hasRug == false)) {
+			item7BuyButton.SetActive(true);}
+		else { item7BuyButton.SetActive(false);}
+
+		if ((GameInventory.item11num >= item8Cost) && (Furniture.hasDuck == false)) {
+			item8BuyButton.SetActive(true);}
+		else { item8BuyButton.SetActive(false);}
+
       }
 
       //Button Functions:
@@ -55,26 +90,66 @@ public class ShopMenu : MonoBehaviour{
            Time.timeScale = 1f;
       }
 
+	//triggered by shopkeeper
 	public void ShowShopButton(){
 		buttonOpenShop.SetActive(true);
 	}
+	
+	public void HideShopButton(){
+		buttonOpenShop.SetActive(false);
+	}
 
 
-      public void Button_BuyItem1(){
-            gameHandler.playerGetTokens((item1Cost * -1));
-            GameHandler.gotitem1 = true;
-            //KaChingSFX.Play();
-      }
+	//trade variables
+	
+	//get bed for apples
+	public void Button_BuyFurniture1(){
+		GameInventory.InventoryRemove(item1num, furniture1Cost);
+		Furniture.hasBed = true;
+		//KaChingSFX.Play();
+	}
 
-      public void Button_BuyItem2(){
-            gameHandler.playerGetTokens((item2Cost * -1));
-            GameHandler.gotitem2 = true;
-            //KaChingSFX.Play();
-      }
+	//get table for acorns
+	public void Button_BuyFurniture2(){
+		GameInventory.InventoryRemove(item2num, furniture2Cost);
+		Furniture.hasTable = true;
+		//KaChingSFX.Play();
+	}
 
-      public void Button_BuyItem3(){
-            gameHandler.playerGetTokens((item3Cost * -1));
-            GameHandler.gotitem3 = true;
-            //KaChingSFX.Play();
-      }
+	public void Button_BuyFurniture3(){
+		GameInventory.InventoryRemove(item1num, furniture3Cost);
+		Furniture.hasChair1 = true;
+		//KaChingSFX.Play();
+	}
+	
+	public void Button_BuyFurniture4(){
+		GameInventory.InventoryRemove(item1num, furniture4Cost);
+		Furniture.hasChair2 = true;
+		//KaChingSFX.Play();
+	}
+
+	public void Button_BuyFurniture5(){
+		GameInventory.InventoryRemove(item1num, furniture5Cost);
+		Furniture.hasSink = true;
+		//KaChingSFX.Play();
+	}
+
+	public void Button_BuyFurniture6(){
+		GameInventory.InventoryRemove(item1num, furniture6Cost);
+		Furniture.hasCouch = true;
+		//KaChingSFX.Play();
+	}
+
+	public void Button_BuyFurniture7(){
+		GameInventory.InventoryRemove(item1num, furniture7Cost);
+		Furniture.hasRug = true;
+		//KaChingSFX.Play();
+	}
+
+	public void Button_BuyFurniture8(){
+		GameInventory.InventoryRemove(item11num, furniture8Cost);
+		Furniture.hasDuck = true;
+		//KaChingSFX.Play();
+	}
+
 }
