@@ -16,6 +16,14 @@ public class PlayerMovement : MonoBehaviour{
 
   Vector2 movement;
 
+	public AudioSource step1;
+	public AudioSource step2;
+	public AudioSource step3;
+	public AudioSource step4;
+	public AudioSource step5;
+	public AudioSource step6;
+	private AudioSource StepToPlay;
+
   void Start(){
     gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
 
@@ -34,9 +42,11 @@ public class PlayerMovement : MonoBehaviour{
 
       if((Input.GetAxisRaw("Horizontal")!= 0)||(Input.GetAxisRaw("Vertical")!= 0)){
         losingStamina = true;
-
+		PlaySteps();
       }
-      else{losingStamina= false;
+      else{
+		  losingStamina= false;
+		  StopSteps();
       }
     }
 
@@ -53,4 +63,30 @@ public class PlayerMovement : MonoBehaviour{
 
       }
     }
+	
+	public void PlaySteps(){
+		if ((StepToPlay !=null)&&(StepToPlay.isPlaying)){
+			return;
+		}
+		else {
+			int StepNum = Random.Range(1, 6);
+		
+			if (StepNum == 1){ StepToPlay = step1;}
+			else if (StepNum == 2){ StepToPlay = step2;}
+			else if (StepNum == 3){ StepToPlay = step3;}
+			else if (StepNum == 4){ StepToPlay = step4;}
+			else if (StepNum == 5){ StepToPlay = step5;}
+			else if (StepNum == 6){ StepToPlay = step6;}
+		
+			StepToPlay.Play();
+			Debug.Log("I am playing " + StepToPlay);
+		}
+	}
+	
+	public void StopSteps(){
+		if ((StepToPlay !=null)&&(StepToPlay.isPlaying)){
+			StepToPlay.Stop();
+		}
+	}
+	
 }
