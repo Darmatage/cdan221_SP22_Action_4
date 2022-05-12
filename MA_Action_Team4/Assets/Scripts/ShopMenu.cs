@@ -11,6 +11,8 @@ public class ShopMenu : MonoBehaviour{
 	public static bool ShopisOpen = false;
 	public GameObject shopMenuUI;
 	public GameObject buttonOpenShop;
+	
+	private GameHandler gameHandler;
 
 	public GameObject item1BuyButton;
 	public GameObject item2BuyButton;
@@ -38,6 +40,8 @@ public class ShopMenu : MonoBehaviour{
 		//buttonOpenShop.SetActive(false);
 		gameInventory = GetComponent<GameInventory>();
 		furnitureControl = GetComponent<Furniture>();
+		gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+		gameHandler.ableToShop = false;
 	}
 
 	void Update (){
@@ -78,26 +82,26 @@ public class ShopMenu : MonoBehaviour{
       //Shop Button Functions:
       public void Button_OpenShop(){
            shopMenuUI.SetActive(true);
-           buttonOpenShop.SetActive(false);
+           gameHandler.ableToShop = true;
            ShopisOpen = true;
            Time.timeScale = 0f;
       }
 
       public void Button_CloseShop() {
            shopMenuUI.SetActive(false);
-           buttonOpenShop.SetActive(true);
+           gameHandler.ableToShop = true;
            ShopisOpen = false;
            Time.timeScale = 1f;
       }
 
 	//shop button visibility triggered by shopkeeper
-	public void ShowShopButton(){
-		buttonOpenShop.SetActive(true);
-	}
+	// public void ShowShopButton(){
+		// buttonOpenShop.SetActive(true);
+	// }
 	
-	public void HideShopButton(){
-		buttonOpenShop.SetActive(false);
-	}
+	// public void HideShopButton(){
+		// buttonOpenShop.SetActive(false);
+	// }
 
 
 	//trade button functions
