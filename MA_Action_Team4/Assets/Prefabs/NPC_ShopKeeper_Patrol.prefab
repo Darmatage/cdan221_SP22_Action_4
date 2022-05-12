@@ -224,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patrolling: 1
   patrolDelay: 1
-  speed: 10
+  speed: 5
   startWaitTime: 2
   moveSpots:
   - {fileID: 8500268178804439831}

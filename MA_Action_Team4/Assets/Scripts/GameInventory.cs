@@ -111,6 +111,7 @@ public class GameInventory : MonoBehaviour{
     }
 
     void InventoryDisplay(){
+		//Inventory
         if (item1bool == true) { item1image.SetActive(true); } else { item1image.SetActive(false); }
         if (item2bool == true) { item2image.SetActive(true); } else { item2image.SetActive(false); }
         if (item3bool == true) { item3image.SetActive(true); } else { item3image.SetActive(false); }
@@ -155,16 +156,17 @@ public class GameInventory : MonoBehaviour{
 		if ((item4num >= 1) && (item9num >=5)){cookButton5.SetActive(true);} else {cookButton5.SetActive(false);} //SteakDinner
 		//if ((item1num >= 2) && (item11num >=1)){cookButton6.SetActive(true);} else {cookButton6.SetActive(false);} //supermeal
 
+		//Cookbook Recipes
 		Text ingredient1aTextB = ingredient1aText.GetComponent<Text>(); ingredient1aTextB.text = ("" + item1num); //apples
 		Text ingredient1bTextB = ingredient1bText.GetComponent<Text>(); ingredient1bTextB.text = ("" + item11num); //sugar
 		Text ingredient2aTextB = ingredient2aText.GetComponent<Text>(); ingredient2aTextB.text = ("" + item7num);  //lemon
 		Text ingredient2bTextB = ingredient2bText.GetComponent<Text>(); ingredient2bTextB.text = ("" + item11num); //sugar
-		Text ingredient3aTextB = ingredient2aText.GetComponent<Text>(); ingredient2aTextB.text = ("" + item2num);  //acorn
-		Text ingredient3bTextB = ingredient2bText.GetComponent<Text>(); ingredient2bTextB.text = ("" + item9num); //saltrock
-		Text ingredient4aTextB = ingredient2aText.GetComponent<Text>(); ingredient2aTextB.text = ("" + item8num);  //mushroom
-		Text ingredient4bTextB = ingredient2bText.GetComponent<Text>(); ingredient2bTextB.text = ("" + item3num); //Carrot
-		Text ingredient5aTextB = ingredient2aText.GetComponent<Text>(); ingredient2aTextB.text = ("" + item4num);  //meat
-		Text ingredient5bTextB = ingredient2bText.GetComponent<Text>(); ingredient2bTextB.text = ("" + item9num);  //salt
+		Text ingredient3aTextB = ingredient3aText.GetComponent<Text>(); ingredient3aTextB.text = ("" + item2num);  //acorn
+		Text ingredient3bTextB = ingredient3bText.GetComponent<Text>(); ingredient3bTextB.text = ("" + item9num); //saltrock
+		Text ingredient4aTextB = ingredient4aText.GetComponent<Text>(); ingredient4aTextB.text = ("" + item8num);  //mushroom
+		Text ingredient4bTextB = ingredient4bText.GetComponent<Text>(); ingredient4bTextB.text = ("" + item3num); //carrot
+		Text ingredient5aTextB = ingredient5aText.GetComponent<Text>(); ingredient5aTextB.text = ("" + item4num);  //meat
+		Text ingredient5bTextB = ingredient5bText.GetComponent<Text>(); ingredient5bTextB.text = ("" + item9num);  //salt
 		//Text ingredient6aTextB = ingredient2aText.GetComponent<Text>(); ingredient2aTextB.text = ("" + item?num);
 		//Text ingredient6bTextB = ingredient2bText.GetComponent<Text>(); ingredient2bTextB.text = ("" + item?num);
 
@@ -199,7 +201,7 @@ public class GameInventory : MonoBehaviour{
 
     public void InventoryRemove(string item, int num){
         string itemRemove = item;
-        if (itemRemove == "item1") { item1num -= num;if (item1num<=0){item1bool = false;} }
+        if (itemRemove == "item1") { item1num -= num; if (item1num<=0){item1bool = false;} }
         else if (itemRemove == "item2") { item2num -= num;if (item2num<=0){item2bool = false;} }
         else if (itemRemove == "item3") { item3num -= num;if (item3num<=0){item3bool = false;} }
         else if (itemRemove == "item4") { item4num -= num;if (item4num<=0){item4bool = false;} }
