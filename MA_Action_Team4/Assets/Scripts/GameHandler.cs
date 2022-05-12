@@ -15,7 +15,7 @@ public class GameHandler : MonoBehaviour {
 	private Slider sliderVolumeCtrl;
 
 	public GameObject ButtonOpenShop;
-	public bool ableToShop = true;
+	public bool ableToShop = false;
 
 	private GameObject player;
 	public static int playerStamina = 100;
