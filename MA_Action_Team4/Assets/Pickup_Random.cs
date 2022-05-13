@@ -35,5 +35,4 @@ public class Pickup_Random : MonoBehaviour{
 	void OnDrawGizmos(){
 		Gizmos.DrawWireCube(transform.position, new Vector3(width,height,0));
 	}
-	
 }
