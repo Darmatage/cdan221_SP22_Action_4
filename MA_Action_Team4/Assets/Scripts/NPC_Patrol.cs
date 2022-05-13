@@ -20,7 +20,7 @@ public class NPC_Patrol : MonoBehaviour {
 	private int previousSpot;
 	public int startSpot = 0;
 	public bool moveForward = true;
-	public bool faceRight = true;
+	public bool faceRight = false;
 	
 
 	void Start(){
@@ -38,8 +38,8 @@ public class NPC_Patrol : MonoBehaviour {
 
 		if (Vector2.Distance(transform.position, moveSpots[nextSpot].position) < 0.2f){
 			if (waitTime <= 0){
-				if (moveForward == true){nextSpot += 1;}
-				else if (moveForward == false){nextSpot -= 1;}
+				if (moveForward == true){previousSpot = nextSpot; nextSpot += 1;}
+				else if (moveForward == false){previousSpot = nextSpot; nextSpot -= 1;}
 					waitTime = startWaitTime;
 				} else {
 					waitTime -= Time.deltaTime;
@@ -54,8 +54,8 @@ public class NPC_Patrol : MonoBehaviour {
 		if (previousSpot < 0){previousSpot = moveSpots.Length -1;}
 		else if (previousSpot > moveSpots.Length -1){previousSpot = 0;}
 
-		if ((previousSpot == 0) && (!faceRight)){NPCTurn();}
-		else if ((previousSpot == (moveSpots.Length -1)) && (faceRight)) {NPCTurn();}
+		if ((previousSpot == 0) && (faceRight)){NPCTurn();}
+		else if ((previousSpot == (moveSpots.Length -1)) && (!faceRight)) {NPCTurn();}
 	  }
 	}
 
