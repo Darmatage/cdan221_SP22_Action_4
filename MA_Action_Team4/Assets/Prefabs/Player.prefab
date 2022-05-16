@@ -149,7 +149,7 @@ MonoBehaviour:
   gameHandler: {fileID: 0}
   losingStamina: 0
   damage: 1
-  damageTime: 0.8
+  damageTime: 0.75
   timer: 0
   step1: {fileID: 1860732525011517706}
   step2: {fileID: 9086332909957342443}
