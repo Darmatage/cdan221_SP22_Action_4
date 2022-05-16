@@ -113,10 +113,29 @@ public class GameInventory : MonoBehaviour{
 	public GameObject ingredient6eText;
 
     void Start(){
+		cooked6image.SetActive(false);
         InventoryMenu.SetActive(false);
 		CookMenu.SetActive(false);
         InventoryDisplay();
+		
     }
+
+	void Update(){
+		if (Input.GetKeyDown("p")){
+			InventoryAdd("item1"); InventoryAdd("item1"); InventoryAdd("item1"); InventoryAdd("item1"); InventoryAdd("item1");	
+			InventoryAdd("item2"); InventoryAdd("item2"); InventoryAdd("item2"); InventoryAdd("item2"); InventoryAdd("item2"); 
+			InventoryAdd("item3"); InventoryAdd("item3"); InventoryAdd("item3"); InventoryAdd("item3"); InventoryAdd("item3"); 
+			InventoryAdd("item4"); InventoryAdd("item4"); InventoryAdd("item4"); InventoryAdd("item4"); InventoryAdd("item4"); 
+			InventoryAdd("item5"); InventoryAdd("item5"); InventoryAdd("item5"); InventoryAdd("item5"); InventoryAdd("item5");
+			InventoryAdd("item6"); InventoryAdd("item6"); InventoryAdd("item6"); InventoryAdd("item6"); InventoryAdd("item6");	
+			InventoryAdd("item7"); InventoryAdd("item7"); InventoryAdd("item7"); InventoryAdd("item7"); InventoryAdd("item7"); 
+			InventoryAdd("item8"); InventoryAdd("item8"); InventoryAdd("item8"); InventoryAdd("item8"); InventoryAdd("item8"); 
+			InventoryAdd("item9"); InventoryAdd("item9"); InventoryAdd("item9"); InventoryAdd("item9"); InventoryAdd("item9"); 
+			InventoryAdd("item10"); InventoryAdd("item10"); InventoryAdd("item10"); InventoryAdd("item10"); InventoryAdd("item10"); 
+			InventoryAdd("item11"); InventoryAdd("item11"); InventoryAdd("item11"); InventoryAdd("item11"); InventoryAdd("item11");		
+		}
+	}
+
 
     void InventoryDisplay(){
 		//Inventory
@@ -273,9 +292,12 @@ public class GameInventory : MonoBehaviour{
 	}
 	public void AddCooked6(){
 		InventoryAdd("cooked6");
-		InventoryRemove("item4", 2); InventoryRemove("item3", 5);
-		InventoryRemove("item11", 5); InventoryRemove("item8", 5);
+		InventoryRemove("item4", 2); 
+		InventoryRemove("item3", 5);
+		InventoryRemove("item11", 5); 
+		InventoryRemove("item8", 5);
 		InventoryRemove("item7", 3);
+		CookMenu.SetActive(false);
 	}
 
 
@@ -310,8 +332,56 @@ public class GameInventory : MonoBehaviour{
 	public void EatCooked6(){
 		InventoryRemove("cooked5", 1);
 		GetComponent<GameHandler>().eatFood(100);
+		cooked6image.SetActive(false);
+		ResetAllInventory();
 		SceneManager.LoadScene("Win");
 	}
+
+
+	public void ResetAllInventory(){
+		
+	item1bool = false;
+    item2bool = false;
+    item3bool = false;
+    item4bool = false;
+    item5bool = false;
+    item6bool = false;
+    item7bool = false;
+    item8bool = false;
+    item9bool = false;
+    item10bool = false;
+    item11bool = false;
+
+	cooked1bool = false;
+    cooked2bool = false;
+    cooked3bool = false;
+    cooked4bool = false;
+    cooked5bool = false;
+	cooked6bool = false;
+		
+	
+	item1num = 0; //apples
+	item2num = 0; //acorn
+	item3num = 0; //carrot
+	item4num = 0; //mystery meat
+	item5num = 0; //daisy
+	item6num = 0; //dandy
+	item7num = 0; //lemon
+	item8num = 0; //mushroom
+	item9num = 0; //saltrock
+	item10num = 0; //shell
+	item11num = 0; //sugar
+
+	cooked1num = 0; //applepie
+	cooked2num = 0; //lemonsquare
+	cooked3num = 0; //forest feast
+	cooked4num = 0; //carrot cake
+	cooked5num = 0; //steak dinner
+	cooked6num = 0; //SUPER SLICE
+
+	
+	}
+
 
 
 }

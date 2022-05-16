@@ -158,6 +158,7 @@ public class GameHandler : MonoBehaviour {
             Time.timeScale = 1f;
             SceneManager.LoadScene("MainMenu");
             playerStamina = StartPlayerStamina;
+			
       }
 
       public void QuitGame() {
