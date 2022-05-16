@@ -639,7 +639,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 973245712782739814, guid: e73bbdbbbbbeb485caf8d319bc0b860e, type: 3}
   m_PrefabInstance: {fileID: 1793822004}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &963751514
+--- !u!1001 &1134214105
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -648,24 +648,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5245142009624185162, guid: 8a03a1ad835c34e4e98c68ecdad945f2, type: 3}
       propertyPath: m_Name
-      value: AudioManager (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7063907308279756247, guid: 8a03a1ad835c34e4e98c68ecdad945f2, type: 3}
-      propertyPath: Loop
-      value: 1
+      value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 7063907308279756247, guid: 8a03a1ad835c34e4e98c68ecdad945f2, type: 3}
       propertyPath: m_Volume
-      value: 0.102
+      value: 0.119
       objectReference: {fileID: 0}
     - target: {fileID: 7063907308279756247, guid: 8a03a1ad835c34e4e98c68ecdad945f2, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: ea0808d638e24594080ab21a8921d074, type: 3}
-    - target: {fileID: 7063907308279756247, guid: 8a03a1ad835c34e4e98c68ecdad945f2, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 43a0a0780494c4c5789a58a20765273e, type: 2}
     - target: {fileID: 7758858301999129904, guid: 8a03a1ad835c34e4e98c68ecdad945f2, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -712,18 +704,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a03a1ad835c34e4e98c68ecdad945f2, type: 3}
---- !u!1 &963751515 stripped
+--- !u!1 &1134214106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5245142009624185162, guid: 8a03a1ad835c34e4e98c68ecdad945f2, type: 3}
-  m_PrefabInstance: {fileID: 963751514}
+  m_PrefabInstance: {fileID: 1134214105}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &963751516
+--- !u!114 &1134214107
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963751515}
+  m_GameObject: {fileID: 1134214106}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2b324ed60e9abb48a6698760a52012a, type: 3}
