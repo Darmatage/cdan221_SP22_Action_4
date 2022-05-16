@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameInventory : MonoBehaviour{
 
@@ -27,6 +28,7 @@ public class GameInventory : MonoBehaviour{
     public static bool cooked3bool = false;
     public static bool cooked4bool = false;
     public static bool cooked5bool = false;
+	public static bool cooked6bool = false;
 
     public GameObject item1image;
     public GameObject item2image;
@@ -45,6 +47,7 @@ public class GameInventory : MonoBehaviour{
     public GameObject cooked3image;
     public GameObject cooked4image;
     public GameObject cooked5image;
+	public GameObject cooked6image; // win condition super slice
 
     public GameObject item1text;
     public GameObject item2text;
@@ -63,6 +66,7 @@ public class GameInventory : MonoBehaviour{
     public GameObject cooked3text;
     public GameObject cooked4text;
     public GameObject cooked5text;
+	//public GameObject cooked6text; // don't need?
 
 	public static int item1num = 0; //apples
 	public static int item2num = 0; //acorn
@@ -81,7 +85,7 @@ public class GameInventory : MonoBehaviour{
 	public static int cooked3num = 0; //forest feast
 	public static int cooked4num = 0; //carrot cake
 	public static int cooked5num = 0; //steak dinner
-
+	public static int cooked6num = 0; //SUPER SLICE
 
 	//Cookbook variables:
 	public GameObject cookButton1;
@@ -89,7 +93,7 @@ public class GameInventory : MonoBehaviour{
     public GameObject cookButton3;
     public GameObject cookButton4;
     public GameObject cookButton5;
-    //public GameObject cookButton6;
+    public GameObject cookButton6;
 
 	public GameObject ingredient1aText;
     public GameObject ingredient1bText;
@@ -101,8 +105,12 @@ public class GameInventory : MonoBehaviour{
     public GameObject ingredient4bText;
 	public GameObject ingredient5aText;
     public GameObject ingredient5bText;
-	// public GameObject ingredient6aText;
-    // public GameObject ingredient6bText;
+
+	public GameObject ingredient6aText;
+    public GameObject ingredient6bText;
+	public GameObject ingredient6cText;
+    public GameObject ingredient6dText;
+	public GameObject ingredient6eText;
 
     void Start(){
         InventoryMenu.SetActive(false);
@@ -129,6 +137,7 @@ public class GameInventory : MonoBehaviour{
         if (cooked3bool == true) { cooked3image.SetActive(true); } else { cooked3image.SetActive(false); }
         if (cooked4bool == true) { cooked4image.SetActive(true); } else { cooked4image.SetActive(false); }
         if (cooked5bool == true) { cooked5image.SetActive(true); } else { cooked5image.SetActive(false); }
+        if (cooked6bool == true) { cooked6image.SetActive(true); } else { cooked6image.SetActive(false); }
 
         Text itemText1B = item1text.GetComponent<Text>(); itemText1B.text = ("" + item1num);
 		Text itemText2B = item2text.GetComponent<Text>(); itemText2B.text = ("" + item2num);
@@ -154,7 +163,8 @@ public class GameInventory : MonoBehaviour{
 		if ((item2num >= 5) && (item9num >=1)){cookButton3.SetActive(true);} else {cookButton3.SetActive(false);} //TrailMix
 		if ((item8num >= 2) && (item3num >=2)){cookButton4.SetActive(true);} else {cookButton4.SetActive(false);} //MushroomStew
 		if ((item4num >= 1) && (item9num >=5)){cookButton5.SetActive(true);} else {cookButton5.SetActive(false);} //SteakDinner
-		//if ((item1num >= 2) && (item11num >=1)){cookButton6.SetActive(true);} else {cookButton6.SetActive(false);} //supermeal
+		if ((item4num >= 2) && (item3num >=5) && (item11num >= 5) && (item8num >=5) && (item7num >=3)){
+			cookButton6.SetActive(true);} else {cookButton6.SetActive(false);} //supermeal
 
 		//Cookbook Recipes
 		Text ingredient1aTextB = ingredient1aText.GetComponent<Text>(); ingredient1aTextB.text = ("" + item1num); //apples
@@ -167,8 +177,12 @@ public class GameInventory : MonoBehaviour{
 		Text ingredient4bTextB = ingredient4bText.GetComponent<Text>(); ingredient4bTextB.text = ("" + item3num); //carrot
 		Text ingredient5aTextB = ingredient5aText.GetComponent<Text>(); ingredient5aTextB.text = ("" + item4num);  //meat
 		Text ingredient5bTextB = ingredient5bText.GetComponent<Text>(); ingredient5bTextB.text = ("" + item9num);  //salt
-		//Text ingredient6aTextB = ingredient2aText.GetComponent<Text>(); ingredient2aTextB.text = ("" + item?num);
-		//Text ingredient6bTextB = ingredient2bText.GetComponent<Text>(); ingredient2bTextB.text = ("" + item?num);
+		
+		Text ingredient6aTextB = ingredient6aText.GetComponent<Text>(); ingredient6aTextB.text = ("" + item4num); //meat
+		Text ingredient6bTextB = ingredient6bText.GetComponent<Text>(); ingredient6bTextB.text = ("" + item3num); //carrot
+		Text ingredient6cTextB = ingredient6cText.GetComponent<Text>(); ingredient6cTextB.text = ("" + item11num); //sugar
+		Text ingredient6dTextB = ingredient6dText.GetComponent<Text>(); ingredient6dTextB.text = ("" + item8num); //mushroom
+		Text ingredient6eTextB = ingredient6eText.GetComponent<Text>(); ingredient6eTextB.text = ("" + item7num); //lemon
 
 	}
 
@@ -191,6 +205,7 @@ public class GameInventory : MonoBehaviour{
         else if (foundItemName == "cooked3") { cooked3bool = true; cooked3num++; }
         else if (foundItemName == "cooked4") { cooked4bool = true; cooked4num++; }
         else if (foundItemName == "cooked5") { cooked5bool = true; cooked5num++; }
+		else if (foundItemName == "cooked6") { cooked6bool = true; cooked6num++; }
 
         InventoryDisplay();
 
@@ -257,7 +272,10 @@ public class GameInventory : MonoBehaviour{
 		InventoryRemove("item4", 1); InventoryRemove("item9", 5);
 	}
 	public void AddCooked6(){
-		//GameHandler win state
+		InventoryAdd("cooked6");
+		InventoryRemove("item4", 2); InventoryRemove("item3", 5);
+		InventoryRemove("item11", 5); InventoryRemove("item8", 5);
+		InventoryRemove("item7", 3);
 	}
 
 
@@ -287,6 +305,12 @@ public class GameInventory : MonoBehaviour{
 	public void EatCooked5(){
 		InventoryRemove("cooked5", 1);
 		GetComponent<GameHandler>().eatFood(55);
+	}
+
+	public void EatCooked6(){
+		InventoryRemove("cooked5", 1);
+		GetComponent<GameHandler>().eatFood(100);
+		SceneManager.LoadScene("Win");
 	}
 
 
