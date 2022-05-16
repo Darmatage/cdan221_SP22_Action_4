@@ -387,7 +387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 300.00003, y: -109}
+  m_AnchoredPosition: {x: 300.00003, y: -107}
   m_SizeDelta: {x: 600, y: 632.512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &853053905
@@ -412,7 +412,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -423,7 +423,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Eliza Desmiralis
+  m_Text: 'Eliza Desmarais
+
+    @wholesalelizard
 
 
     Carley Allen
@@ -431,11 +433,13 @@ MonoBehaviour:
     @RetroRebot
 
 
-    Jax Ferreira
+    Jax
+    Ferreira
+
+    @marineyeti150
 
 
-    John
-    Castro
+    John Castro
 
     @centibeedle'
 --- !u!222 &853053906
