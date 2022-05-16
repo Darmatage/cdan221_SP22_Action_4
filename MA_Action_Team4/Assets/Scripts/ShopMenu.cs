@@ -33,7 +33,7 @@ public class ShopMenu : MonoBehaviour{
 	public int furniture8Cost = 5; //duck = 5 sugar
 
 	  
-	//public AudioSource KaChingSFX;
+	public AudioSource KaChingSFX;
 
 	void Start (){
 		shopMenuUI.SetActive(false);
@@ -110,56 +110,56 @@ public class ShopMenu : MonoBehaviour{
 	public void Button_BuyFurniture1(){
 		gameInventory.InventoryRemove("item1", furniture1Cost);
 		Furniture.hasBed = true;
-		//KaChingSFX.Play();
+		KaChingSFX.Play();
 	}
 
 	//get table for acorns
 	public void Button_BuyFurniture2(){
 		gameInventory.InventoryRemove("item2", furniture2Cost);
 		Furniture.hasTable = true;
-		//KaChingSFX.Play();
+		KaChingSFX.Play();
 	}
 
 	//get chair1 for carrot
 	public void Button_BuyFurniture3(){
 		gameInventory.InventoryRemove("item3", furniture3Cost);
 		Furniture.hasChair1 = true;
-		//KaChingSFX.Play();
+		KaChingSFX.Play();
 	}
 
 	//get chair2 for carrot	
 	public void Button_BuyFurniture4(){
 		gameInventory.InventoryRemove("item3", furniture4Cost);
 		Furniture.hasChair2 = true;
-		//KaChingSFX.Play();
+		KaChingSFX.Play();
 	}
 
 	//get sink for mushrooms
 	public void Button_BuyFurniture5(){
 		gameInventory.InventoryRemove("item8", furniture5Cost);
 		Furniture.hasSink = true;
-		//KaChingSFX.Play();
+		KaChingSFX.Play();
 	}
 
 	//get couch for daisy
 	public void Button_BuyFurniture6(){
 		gameInventory.InventoryRemove("item5", furniture6Cost);
 		Furniture.hasCouch = true;
-		//KaChingSFX.Play();
+		KaChingSFX.Play();
 	}
 
 	//get rug for dandy
 	public void Button_BuyFurniture7(){
 		gameInventory.InventoryRemove("item6", furniture7Cost);
 		Furniture.hasRug = true;
-		//KaChingSFX.Play();
+		KaChingSFX.Play();
 	}
 
 	//get duck for sugar
 	public void Button_BuyFurniture8(){
 		gameInventory.InventoryRemove("item11", furniture8Cost);
 		Furniture.hasDuck = true;
-		//KaChingSFX.Play();
+		KaChingSFX.Play();
 	}
 
 }

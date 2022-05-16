@@ -112,6 +112,12 @@ public class GameInventory : MonoBehaviour{
     public GameObject ingredient6dText;
 	public GameObject ingredient6eText;
 
+	private AudioSource eatSound;
+	public AudioSource eatSFX1;
+	public AudioSource eatSFX2;
+	public AudioSource eatSFX3;
+
+
     void Start(){
 		cooked6image.SetActive(false);
         InventoryMenu.SetActive(false);
@@ -305,33 +311,82 @@ public class GameInventory : MonoBehaviour{
 	public void EatCooked1(){
 		InventoryRemove("cooked1", 1);
 		GetComponent<GameHandler>().eatFood(20);
+		
+		//randomize sound for each object
+			int PUnum = Random.Range(1,3);
+			if (PUnum == 1){eatSound = eatSFX1;}
+			else if (PUnum == 2){eatSound = eatSFX2;}
+			else if (PUnum == 3){eatSound = eatSFX3;}
+			
+			eatSound.Play();
 	}
 
 	public void EatCooked2(){
 		InventoryRemove("cooked2", 1);
 		GetComponent<GameHandler>().eatFood(20);
+		
+		//randomize sound for each object
+			int PUnum = Random.Range(1,3);
+			if (PUnum == 1){eatSound = eatSFX1;}
+			else if (PUnum == 2){eatSound = eatSFX2;}
+			else if (PUnum == 3){eatSound = eatSFX3;}
+			
+			eatSound.Play();
 	}
 
 	public void EatCooked3(){
 		InventoryRemove("cooked3", 1);
 		GetComponent<GameHandler>().eatFood(35);
+		
+		//randomize sound for each object
+			int PUnum = Random.Range(1,3);
+			if (PUnum == 1){eatSound = eatSFX1;}
+			else if (PUnum == 2){eatSound = eatSFX2;}
+			else if (PUnum == 3){eatSound = eatSFX3;}
+			
+			eatSound.Play();
 	}
 
 
 	public void EatCooked4(){
 		InventoryRemove("cooked4", 1);
 		GetComponent<GameHandler>().eatFood(45);
+		
+		//randomize sound for each object
+			int PUnum = Random.Range(1,3);
+			if (PUnum == 1){eatSound = eatSFX1;}
+			else if (PUnum == 2){eatSound = eatSFX2;}
+			else if (PUnum == 3){eatSound = eatSFX3;}
+			
+			eatSound.Play();
 	}
 
 
 	public void EatCooked5(){
 		InventoryRemove("cooked5", 1);
 		GetComponent<GameHandler>().eatFood(55);
+		
+		//randomize sound for each object
+			int PUnum = Random.Range(1,3);
+			if (PUnum == 1){eatSound = eatSFX1;}
+			else if (PUnum == 2){eatSound = eatSFX2;}
+			else if (PUnum == 3){eatSound = eatSFX3;}
+			
+			eatSound.Play();
 	}
 
 	public void EatCooked6(){
 		InventoryRemove("cooked5", 1);
 		GetComponent<GameHandler>().eatFood(100);
+		
+		//randomize sound for each object
+			int PUnum = Random.Range(1,3);
+			if (PUnum == 1){eatSound = eatSFX1;}
+			else if (PUnum == 2){eatSound = eatSFX2;}
+			else if (PUnum == 3){eatSound = eatSFX3;}
+		
+		eatSound.Play();
+		
 		cooked6image.SetActive(false);
 		ResetAllInventory();
 		SceneManager.LoadScene("Win");
