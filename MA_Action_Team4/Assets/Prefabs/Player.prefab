@@ -107,9 +107,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.15}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.35
 --- !u!50 &987560189911591680
 Rigidbody2D:
   serializedVersion: 4
@@ -143,13 +143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8e766b1a6a3437bab865ae3735e21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
+  moveSpeed: 2
   rb: {fileID: 987560189911591680}
   animator: {fileID: 987560189911591741}
   gameHandler: {fileID: 0}
   losingStamina: 0
   damage: 1
-  damageTime: 1
+  damageTime: 0.8
   timer: 0
   step1: {fileID: 1860732525011517706}
   step2: {fileID: 9086332909957342443}
