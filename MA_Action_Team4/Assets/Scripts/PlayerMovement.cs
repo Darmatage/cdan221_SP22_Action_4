@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour{
 
-  public float moveSpeed = 2f;
+	public float moveSpeed = 2f;
+	public static float moveSpeedCurrent;
 
-  public Rigidbody2D rb;
-  public Animator animator;
-  public GameHandler gameHandler;
-  public bool losingStamina = false;
-  public int damage = 1;
-  public float damageTime = 1f;
-  public float timer = 0;
+	public Rigidbody2D rb;
+	public Animator animator;
+	public GameHandler gameHandler;
+	public bool losingStamina = false;
+	public bool dashing = false;
+	public int damage = 1;
+	public float damageTime = 1f;
+	public float timer = 0;
 
-  Vector2 movement;
+	Vector2 movement;
 
 	public AudioSource step1;
 	public AudioSource step2;
@@ -24,44 +26,56 @@ public class PlayerMovement : MonoBehaviour{
 	public AudioSource step6;
 	private AudioSource StepToPlay;
 
-  void Start(){
-    gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+	void Start(){
+		gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+		moveSpeedCurrent = moveSpeed;
 
+	}
 
-  }
+    void Update(){
+	//input
+		movement.x = Input.GetAxisRaw("Horizontal");
+		movement.y = Input.GetAxisRaw("Vertical");
 
-    void Update()
-    {
-//input
-      movement.x = Input.GetAxisRaw("Horizontal");
-      movement.y = Input.GetAxisRaw("Vertical");
+		animator.SetFloat("Horizontal", movement.x);
+		animator.SetFloat("Vertical", movement.y);
+		animator.SetFloat("Speed", movement.sqrMagnitude);
 
-      animator.SetFloat("Horizontal", movement.x);
-      animator.SetFloat("Vertical", movement.y);
-      animator.SetFloat("Speed", movement.sqrMagnitude);
+		if (Input.GetKey("left shift")){
+			dashing = true;
+			moveSpeedCurrent = moveSpeed *2; //speed up when dashing
+		}
+		
+		if (Input.GetKeyUp("left shift")){
+			dashing = false;
+			moveSpeedCurrent = moveSpeed;
+		}
 
-      if((Input.GetAxisRaw("Horizontal")!= 0)||(Input.GetAxisRaw("Vertical")!= 0)){
-        losingStamina = true;
-		PlaySteps();
-      }
-      else{
-		  losingStamina= false;
-		  StopSteps();
-      }
-    }
+		if((Input.GetAxisRaw("Horizontal")!= 0)||(Input.GetAxisRaw("Vertical")!= 0)){
+			losingStamina = true;
+			PlaySteps();
+		}else{
+			losingStamina= false;
+			StopSteps();
+		}
+	}
 
-    void FixedUpdate(){
-      rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+	void FixedUpdate(){
+		rb.MovePosition(rb.position + movement * moveSpeedCurrent * Time.fixedDeltaTime);
 
-      if(losingStamina == true){
-        timer += 0.01f;
-        if(timer >= damageTime){
-          timer = 0;
-          gameHandler.playerGetHit(damage);
-          Debug.Log("player lost stamina");
-        }
-
-      }
+		if(losingStamina == true){
+			if (!dashing){ 
+				timer += 0.01f; 
+			} else { 
+				timer += 0.04f; //speed up stamina loss when dashing
+			}
+			
+			if(timer >= damageTime){
+				timer = 0;
+				gameHandler.playerGetHit(damage);
+				Debug.Log("player lost stamina");
+			}
+		}
     }
 	
 	public void PlaySteps(){
