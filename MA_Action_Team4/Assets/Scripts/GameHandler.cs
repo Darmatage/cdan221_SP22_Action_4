@@ -35,7 +35,8 @@ public class GameHandler : MonoBehaviour {
 	public static bool gotitem3 = false;
 
 	private string sceneName;
-
+	
+	
 	void Awake (){
 		SetLevel (volumeLevel);
 		GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
@@ -150,26 +151,85 @@ public class GameHandler : MonoBehaviour {
 		SceneManager.LoadScene("Lose");
 	}
 
-      public void StartGame() {
-            SceneManager.LoadScene("Level1");
-      }
+	public void StartGame() {
+		SceneManager.LoadScene("Level1");
+		ResetAllInventoryFurniture();
+	}
 
-      public void RestartGame() {
-            Time.timeScale = 1f;
-            SceneManager.LoadScene("MainMenu");
-            playerStamina = StartPlayerStamina;
-			
-      }
+	public void RestartGame() {
+		Time.timeScale = 1f;
+		SceneManager.LoadScene("MainMenu");
+		playerStamina = StartPlayerStamina;
+		ResetAllInventoryFurniture();	
+	}
 
-      public void QuitGame() {
-                #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-                #else
-                Application.Quit();
-                #endif
-      }
+	public void QuitGame() {
+		#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+		#else
+		Application.Quit();
+		#endif
+	}
 
-      public void Credits() {
-            SceneManager.LoadScene("Credits");
-      }
+	public void Credits() {
+		SceneManager.LoadScene("Credits");
+	}
+	  
+	public void ResetAllInventoryFurniture(){
+		
+		//reset starting position in level1
+		GameHandler_PlayerReturn.lastMap = "";
+		
+		//reset all inventory
+		GameInventory.item1bool = false;
+		GameInventory.item2bool = false;
+		GameInventory.item3bool = false;
+		GameInventory.item4bool = false;
+		GameInventory.item5bool = false;
+		GameInventory.item6bool = false;
+		GameInventory.item7bool = false;
+		GameInventory.item8bool = false;
+		GameInventory.item9bool = false;
+		GameInventory.item10bool = false;
+		GameInventory.item11bool = false;
+
+		GameInventory.cooked1bool = false;
+		GameInventory.cooked2bool = false;
+		GameInventory.cooked3bool = false;
+		GameInventory.cooked4bool = false;
+		GameInventory.cooked5bool = false;
+		GameInventory.cooked6bool = false;
+		
+	
+		GameInventory.item1num = 0; //apples
+		GameInventory.item2num = 0; //acorn
+		GameInventory.item3num = 0; //carrot
+		GameInventory.item4num = 0; //mystery meat
+		GameInventory.item5num = 0; //daisy
+		GameInventory.item6num = 0; //dandy
+		GameInventory.item7num = 0; //lemon
+		GameInventory.item8num = 0; //mushroom
+		GameInventory.item9num = 0; //saltrock
+		GameInventory.item10num = 0; //shell
+		GameInventory.item11num = 0; //sugar
+
+		GameInventory.cooked1num = 0; //applepie
+		GameInventory.cooked2num = 0; //lemonsquare
+		GameInventory.cooked3num = 0; //forest feast
+		GameInventory.cooked4num = 0; //carrot cake
+		GameInventory.cooked5num = 0; //steak dinner
+		GameInventory.cooked6num = 0; //SUPER SLICE
+		
+		//reset furniture
+		Furniture.hasBed = false;
+		Furniture.hasTable = false;
+		Furniture.hasChair1 = false;
+		Furniture.hasChair2 = false;
+		Furniture.hasSink = false;
+		Furniture.hasCouch = false;
+		Furniture.hasRug = false;
+		Furniture.hasDuck = false;	
+	}  
+	  
+	  
 }

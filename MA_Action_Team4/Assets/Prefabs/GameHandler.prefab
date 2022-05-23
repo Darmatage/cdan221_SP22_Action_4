@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4040746689753034139}
   - component: {fileID: 4040746689753034138}
-  - component: {fileID: 1839259290659924628}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: GameHandler
@@ -52,18 +51,3 @@ MonoBehaviour:
   staminaText: {fileID: 0}
   tokensText: {fileID: 0}
   isDefending: 0
---- !u!114 &1839259290659924628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4040746689753034137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3beac9a39885348bbace36b288753b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duckOBJ: {fileID: 0}
-  chair1OBJ: {fileID: 0}
-  chair2OBJ: {fileID: 0}

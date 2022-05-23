@@ -127,6 +127,8 @@ public class GameInventory : MonoBehaviour{
     }
 
 	void Update(){
+		
+		//cheat code
 		if (Input.GetKeyDown("p")){
 			InventoryAdd("item1"); InventoryAdd("item1"); InventoryAdd("item1"); InventoryAdd("item1"); InventoryAdd("item1");	
 			InventoryAdd("item2"); InventoryAdd("item2"); InventoryAdd("item2"); InventoryAdd("item2"); InventoryAdd("item2"); 
@@ -395,48 +397,54 @@ public class GameInventory : MonoBehaviour{
 
 	public void ResetAllInventory(){
 		
-	item1bool = false;
-    item2bool = false;
-    item3bool = false;
-    item4bool = false;
-    item5bool = false;
-    item6bool = false;
-    item7bool = false;
-    item8bool = false;
-    item9bool = false;
-    item10bool = false;
-    item11bool = false;
+		item1bool = false;
+		item2bool = false;
+		item3bool = false;
+		item4bool = false;
+		item5bool = false;
+		item6bool = false;
+		item7bool = false;
+		item8bool = false;
+		item9bool = false;
+		item10bool = false;
+		item11bool = false;
 
-	cooked1bool = false;
-    cooked2bool = false;
-    cooked3bool = false;
-    cooked4bool = false;
-    cooked5bool = false;
-	cooked6bool = false;
+		cooked1bool = false;
+		cooked2bool = false;
+		cooked3bool = false;
+		cooked4bool = false;
+		cooked5bool = false;
+		cooked6bool = false;
 		
 	
-	item1num = 0; //apples
-	item2num = 0; //acorn
-	item3num = 0; //carrot
-	item4num = 0; //mystery meat
-	item5num = 0; //daisy
-	item6num = 0; //dandy
-	item7num = 0; //lemon
-	item8num = 0; //mushroom
-	item9num = 0; //saltrock
-	item10num = 0; //shell
-	item11num = 0; //sugar
+		item1num = 0; //apples
+		item2num = 0; //acorn
+		item3num = 0; //carrot
+		item4num = 0; //mystery meat
+		item5num = 0; //daisy
+		item6num = 0; //dandy
+		item7num = 0; //lemon
+		item8num = 0; //mushroom
+		item9num = 0; //saltrock
+		item10num = 0; //shell
+		item11num = 0; //sugar
 
-	cooked1num = 0; //applepie
-	cooked2num = 0; //lemonsquare
-	cooked3num = 0; //forest feast
-	cooked4num = 0; //carrot cake
-	cooked5num = 0; //steak dinner
-	cooked6num = 0; //SUPER SLICE
+		cooked1num = 0; //applepie
+		cooked2num = 0; //lemonsquare
+		cooked3num = 0; //forest feast
+		cooked4num = 0; //carrot cake
+		cooked5num = 0; //steak dinner
+		cooked6num = 0; //SUPER SLICE
+		
+		Furniture.hasBed = false;
+		Furniture.hasTable = false;
+		Furniture.hasChair1 = false;
+		Furniture.hasChair2 = false;
+		Furniture.hasSink = false;
+		Furniture.hasCouch = false;
+		Furniture.hasRug = false;
+		Furniture.hasDuck = false;
 
-	
 	}
-
-
 
 }

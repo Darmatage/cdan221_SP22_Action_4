@@ -9,6 +9,7 @@ TagManager:
   - GameMusic
   - DialogueManager
   - ShopButton
+  - StartHere
   layers:
   - Default
   - TransparentFX
